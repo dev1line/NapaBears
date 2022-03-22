@@ -214,6 +214,7 @@ const HeavenAndHellPage: FC = () => {
   };
 
   const handleRollStakedBears = async (tokenId: string) => {
+    console.log('clicked');
     try {
       const { contract: rollContract } = await getContractRoll(connector);
 

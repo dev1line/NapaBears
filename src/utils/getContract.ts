@@ -46,7 +46,7 @@ export const getContractStake = async (connector: any) => {
 
   const contractAbi: any = contractBerriesStaking.abi;
 
-  const contractAddress = STAKE_CONTRACT;
+  const contractAddress = BERRIES_STAKING_CONTRACT;
 
   return {
     contract: new web3.eth.Contract(contractAbi, contractAddress),
@@ -60,7 +60,7 @@ export const getContractStakeOld = async (connector: any) => {
 
   const contractAbi: any = contractStaking.abi;
 
-  const contractAddress = BERRIES_STAKING_CONTRACT;
+  const contractAddress = STAKE_CONTRACT;
 
   return {
     contract: new web3.eth.Contract(contractAbi, contractAddress),

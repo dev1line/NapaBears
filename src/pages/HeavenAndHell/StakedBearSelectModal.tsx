@@ -29,18 +29,20 @@ const StakedBearSelectModal: FC<RollModalProps> = ({ onClose, handleRoll, name, 
     const getBlockchainData = async () => {
       if (connector && library) {
         try {
+          console.log('in model');
           const { contract: bearContract } = await getContractBear(connector);
 
           if (bears.length) {
+            console.log('bears.length > 0', bears.length);
             let results: any[] = await Promise.all(
               bears.map(async (item: any): Promise<any> => {
                 const img = await bearContract.methods.tokenURI(item).call();
                 const removeIPFSTextImg = img.substring(7, img.length);
-                const imgUrl = await axios.get(`https://cloudflare-ipfs.com/ipfs/${removeIPFSTextImg}`);
+                const imgUrl = await axios.get(`https://gateway.pinata.cloud/ipfs/${removeIPFSTextImg}`);
                 const img2nd = imgUrl?.data?.image;
                 const removeIPFSTextImg2nd = img2nd.substring(7, img2nd.length);
                 return {
-                  img: `https://cloudflare-ipfs.com/ipfs/${removeIPFSTextImg2nd}`,
+                  img: `https://gateway.pinata.cloud/ipfs/${removeIPFSTextImg2nd}`,
                   id: item,
                 };
               })
