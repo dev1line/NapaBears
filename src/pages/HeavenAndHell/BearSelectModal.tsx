@@ -36,11 +36,15 @@ const BearSelectModal: FC<RollModalProps> = ({ onClose, handleRoll, name, bears 
               bears.map(async (item: any): Promise<any> => {
                 const img = await bearContract.methods.tokenURI(item).call();
                 const removeIPFSTextImg = img.substring(7, img.length);
-                const imgUrl = await axios.get(`https://cloudflare-ipfs.com/ipfs/${removeIPFSTextImg}`);
+                console.log('removeIPFSTextImg', removeIPFSTextImg);
+                const imgUrl = await axios.get(`https://gateway.pinata.cloud/ipfs/${removeIPFSTextImg}`);
+
                 const img2nd = imgUrl?.data?.image;
+
                 const removeIPFSTextImg2nd = img2nd.substring(7, img2nd.length);
+                console.log('removeIPFSTextImg2nd', removeIPFSTextImg2nd);
                 return {
-                  img: `https://cloudflare-ipfs.com/ipfs/${removeIPFSTextImg2nd}`,
+                  img: `https://gateway.pinata.cloud/ipfs/${removeIPFSTextImg2nd}`,
                   id: item,
                 };
               })

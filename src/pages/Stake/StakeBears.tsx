@@ -39,11 +39,11 @@ export const StakeBears = ({
               stakedBear.map(async (item: any): Promise<any> => {
                 const img = await bearContract.methods.tokenURI(item).call();
                 const removeIPFSTextImg = img.substring(7, img.length);
-                const imgUrl = await axios.get(`https://cloudflare-ipfs.com/ipfs/${removeIPFSTextImg}`);
+                const imgUrl = await axios.get(`https://gateway.pinata.cloud/ipfs/${removeIPFSTextImg}`);
                 const img2nd = imgUrl?.data?.image;
                 const removeIPFSTextImg2nd = img2nd.substring(7, img2nd.length);
                 return {
-                  img: `https://cloudflare-ipfs.com/ipfs/${removeIPFSTextImg2nd}`,
+                  img: `https://gateway.pinata.cloud/ipfs/${removeIPFSTextImg2nd}`,
                   id: item,
                 };
               })
@@ -55,11 +55,11 @@ export const StakeBears = ({
               tokensOfOwner.map(async (item: any): Promise<any> => {
                 const img = await bearContract.methods.tokenURI(item).call();
                 const removeIPFSTextImg = img.substring(7, img.length);
-                const imgUrl = await axios.get(`https://cloudflare-ipfs.com/ipfs/${removeIPFSTextImg}`);
+                const imgUrl = await axios.get(`https://gateway.pinata.cloud/ipfs/${removeIPFSTextImg}`);
                 const img2nd = imgUrl?.data?.image;
                 const removeIPFSTextImg2nd = img2nd.substring(7, img2nd.length);
                 return {
-                  img: `https://cloudflare-ipfs.com/ipfs/${removeIPFSTextImg2nd}`,
+                  img: `https://gateway.pinata.cloud/ipfs/${removeIPFSTextImg2nd}`,
                   id: item,
                 };
               })
