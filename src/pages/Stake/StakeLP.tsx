@@ -8,14 +8,14 @@ import StakeLPModal from './StakeLPModal';
 import UnStakeLPModal from './UnStakeLPModal';
 import { toast } from 'react-toastify';
 import { useWallet } from 'hooks/useWallet';
-
+import Web3 from 'web3';
 export const StakeLP: FC = () => {
   const { active, account, connector, library } = useWallet();
   //   const { active, connector, library } = useWallet();
   //   const account = '0x5b702F067C7d29470F20922a1c861588Cbaa86a4';
   const [data, setData] = useState({
     totalRewards: 0,
-    balance: 0,
+    balance: Web3.utils.toBN(0),
     stakedBear: [],
     stakedBearOld: [],
     allowance: '0',
@@ -47,7 +47,7 @@ export const StakeLP: FC = () => {
       setData({
         totalStakedBalance,
         totalRewards: rewards,
-        balance: Number(library.utils.fromWei(balance, 'ether')),
+        balance,
         stakedBear,
         stakedBearOld,
         allowance,
@@ -79,10 +79,16 @@ export const StakeLP: FC = () => {
           const balance = await LPTokenContract.methods.balanceOf(account).call();
           const totalStakedUni = await stakeContractLP.methods.balanceOf(account).call();
           const rewards = await stakeContractLP.methods.earned(account).call();
+          console.log(
+            "Number(library.utils.fromWei(balance, 'ether'))",
+            Number(library.utils.fromWei(balance, 'ether')),
+            Web3.utils.fromWei(balance, 'ether'),
+            balance
+          );
           setData({
             totalStakedBalance,
             totalRewards: rewards,
-            balance: Number(library.utils.fromWei(balance, 'ether')),
+            balance,
             stakedBear,
             stakedBearOld,
             allowance,
@@ -98,7 +104,7 @@ export const StakeLP: FC = () => {
     getBlockchainData();
   }, [connector, account, active, library]);
 
-  const handleStake = async (stakedAmount: number | undefined) => {
+  const handleStake = async (stakedAmount: any | undefined) => {
     try {
       const { contract: stakeContractLP } = await getContractStakeLP(connector);
       await stakeContractLP.methods
@@ -212,7 +218,7 @@ export const StakeLP: FC = () => {
         </Loading>
       )}
       <TitleContainer>
-        <StakeBerriesText fontSize={48} strong lineHeight='50px'>
+        <StakeBerriesText fontSize={48} strong lineHeight="50px">
           Stake $BERRIES-ETH
         </StakeBerriesText>
         <Typography fontSize={18}>Stake LP tokens and earn more $BERRIES (Total Pool = 15,000 $BERRIES/day)</Typography>
@@ -220,10 +226,10 @@ export const StakeLP: FC = () => {
       </TitleContainer>
       <StakeLPContainer>
         <AccountBalance>
-          <TitleAccountBalance fontSize={30} color="#B4C4FB" strong align='center'>
+          <TitleAccountBalance fontSize={30} color="#B4C4FB" strong align="center">
             Total Staked
           </TitleAccountBalance>
-          <AmountStaked strong fontSize={36}  lineHeight='40px'>
+          <AmountStaked strong fontSize={36} lineHeight="40px">
             {Number(library?.utils?.fromWei('' + totalStakedBalance, 'ether') || 0).toFixed(2)} LP Tokens
           </AmountStaked>
           <LockImage src={LockImg} alt="lockimg" />
@@ -235,7 +241,7 @@ export const StakeLP: FC = () => {
               Claim
             </Button>
           </TitleClaimRewards>
-          <ClaimRewardAmount strong fontSize={36}  lineHeight='40px'>
+          <ClaimRewardAmount strong fontSize={36} lineHeight="40px">
             {Number(library?.utils?.fromWei('' + totalRewards, 'ether') || 0).toFixed(2)} $BERRIES
           </ClaimRewardAmount>
         </ClaimRewards>
@@ -257,7 +263,7 @@ export const StakeLP: FC = () => {
               Withdraw all
             </WithdrawAllButton>
           </TitleClaimRewards>
-          <Typography fontSize={35} strong margin="10px 0 0"  lineHeight='40px'>
+          <Typography fontSize={35} strong margin="10px 0 0" lineHeight="40px">
             {Number(library?.utils?.fromWei('' + totalStakedUni, 'ether') || 0).toFixed(2)} LP Token
           </Typography>
         </UnstakeBear>
@@ -267,12 +273,15 @@ export const StakeLP: FC = () => {
             <Button onClick={() => toggleOpen('stakeModal')} disabled={+allowance === 0 || Number(balance) === 0}>
               Stake
             </Button>
-            <Button onClick={() => handleStake(balance)} disabled={+allowance === 0 || Number(balance) === 0}>
+            <Button
+              onClick={() => handleStake(Web3.utils.fromWei(balance, 'ether'))}
+              disabled={+allowance === 0 || Number(balance) === 0}
+            >
               Stake All
             </Button>
           </TitleClaimRewards>
-          <Typography fontSize={35} strong margin="10px 0 0" lineHeight='40px'>
-            {Number(balance).toFixed(2)} LP Token
+          <Typography fontSize={35} strong margin="10px 0 0" lineHeight="40px">
+            {Number(Web3.utils.fromWei(balance, 'ether')).toFixed(2)} LP Token
           </Typography>
         </StakeBear>
       </StakeLPContainer>
@@ -320,15 +329,15 @@ const disabledStyles = `
         color:#FFFFFF80 !important;
     }
     &:hover {
-        background-color: #e31d78;
+        background-color: #098d60;
         box-shadow: none !important;
         filter: none !important;
       }
 `;
 
 const Button = styled.button`
-  background-color: #e31d78;
-  border-color: #e31d78;
+  background-color: #098d60;
+  border-color: #098d60;
   border-radius: 20px;
   color: white;
   width: auto;
@@ -344,8 +353,8 @@ const Button = styled.button`
 `;
 
 const WithdrawAllButton = styled.button`
-  background-color: #e31d78;
-  border-color: #e31d78;
+  background-color: #098d60;
+  border-color: #098d60;
   border-radius: 20px;
   color: white;
   width: auto;
@@ -374,7 +383,7 @@ const StakeLPContainer = styled.div`
   @media (max-width: 560px) {
     p {
       text-align: center;
-      display:block;
+      display: block;
     }
   }
 `;
@@ -392,7 +401,7 @@ const TitleAccountBalance = styled(Typography)`
   width: 100%;
 `;
 const AccountBalance = styled.div`
-  background: #1e3580;
+  background: #0f6e80;
   width: 49%;
   border-radius: 20px;
   padding: 40px 45px 45px;
@@ -412,7 +421,7 @@ const AccountBalance = styled.div`
 `;
 
 const ClaimRewards = styled.div`
-  background: #1e3580;
+  background: #0f6e80;
   width: 49%;
   border-radius: 20px;
   padding: 20px 45px 45px;
@@ -448,7 +457,7 @@ const ClaimRewardAmount = styled(Typography)`
 `;
 
 const UnstakeBear = styled.div`
-  background: #1e3580;
+  background: #0f6e80;
   width: 49%;
   border-radius: 20px;
   padding: 20px 45px 45px;
@@ -459,7 +468,7 @@ const UnstakeBear = styled.div`
 `;
 
 const StakeBear = styled.div`
-  background: #1e3580;
+  background: #0f6e80;
   width: 49%;
   border-radius: 20px;
   padding: 20px 45px 45px;

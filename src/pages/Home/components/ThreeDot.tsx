@@ -5,14 +5,16 @@ export const ThreeDot = styled.div`
   margin: 100px auto;
   width: 14px;
   height: 14px;
-  background: #e31d78;
+  background-color: #098d60;
+  border-color: #9aff4f;
   border-radius: 50%;
   &::after,
   &::before {
     content: '';
     width: 14px;
     height: 14px;
-    background: #e31d78;
+    background-color: #098d60;
+    border-color: #9aff4f;
     border-radius: 50%;
     display: block;
     left: 0;

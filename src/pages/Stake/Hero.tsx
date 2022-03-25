@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import BearGIF from 'assets/v2/bear.gif';
 import { Typography } from './Typography';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { WalletConnect } from './WalletConnect';
 import { StakeBears } from './StakeBears';
 import { StakeLP } from './StakeLP';
@@ -272,25 +272,25 @@ const Hero = () => {
     }
   };
 
-  const handleUnstakeOld = async (bears: string[]) => {
-    try {
-      const { contract: stakeContractOld } = await getContractStakeOld(connector);
-      await stakeContractOld.methods
-        .withdraw(bears)
-        .send({
-          from: account,
-        })
-        .on('transactionHash', async () => {
-          setLoading('Unstaking');
-          toggleOpen('unStakeModal');
-        })
-        .on('receipt', async () => {
-          refetch('Unstake success!');
-        });
-    } catch (err) {
-      setLoading('');
-    }
-  };
+  // const handleUnstakeOld = async (bears: string[]) => {
+  //   try {
+  //     const { contract: stakeContractOld } = await getContractStakeOld(connector);
+  //     await stakeContractOld.methods
+  //       .withdraw(bears)
+  //       .send({
+  //         from: account,
+  //       })
+  //       .on('transactionHash', async () => {
+  //         setLoading('Unstaking');
+  //         toggleOpen('unStakeModal');
+  //       })
+  //       .on('receipt', async () => {
+  //         refetch('Unstake success!');
+  //       });
+  //   } catch (err) {
+  //     setLoading('');
+  //   }
+  // };
 
   const toggleOpen = (key: 'stakeModal' | 'unStakeModal') => {
     setOpen((old) => ({ ...old, [key]: !old[key] }));
@@ -304,8 +304,8 @@ const Hero = () => {
     tokensOfOwner,
     allStakedBear,
     isApprovedForAll,
-    stakedBearOld,
-    percentageMigrate,
+    // stakedBearOld,
+    // percentageMigrate,
   } = data;
   return (
     <>
@@ -333,7 +333,7 @@ const Hero = () => {
           <WalletConnect />
         </Introduction>
       </Container>
-      {active && (
+      {/* {active && (
         <MigrationContainer>
           <MigrationPercent>
             <div>{(percentageMigrate * 100).toFixed(2)}%</div>
@@ -354,7 +354,7 @@ const Hero = () => {
             </Button>
           </MigrationAction>
         </MigrationContainer>
-      )}
+      )} */}
 
       <TotalStakeContainer>
         <TotalStakeRow>
@@ -414,31 +414,31 @@ const Empty = styled.div`
   height: 300px;
 `;
 
-const disabledStyles = `
-    cursor: not-allowed !important;
-    box-shadow: unset !important;
-    color:#FFFFFF80;
-    & > * {
-        color:#FFFFFF80 !important;
-    }
-    &:hover {
-        background-color: #e31d78;
-        box-shadow: none !important;
-        filter: none !important;
-      }
-`;
+// const disabledStyles = `
+//     cursor: not-allowed !important;
+//     box-shadow: unset !important;
+//     color:#FFFFFF80;
+//     & > * {
+//         color:#FFFFFF80 !important;
+//     }
+//     &:hover {
+//         background-color: #098d60;
+//         box-shadow: none !important;
+//         filter: none !important;
+//       }
+// `;
 
-const buttonBase = css`
-  font-style: normal;
-  font-weight: normal;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  &:hover {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    filter: brightness(0.8);
-  }
-`;
+// const buttonBase = css`
+//   font-style: normal;
+//   font-weight: normal;
+//   text-align: center;
+//   cursor: pointer;
+//   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+//   &:hover {
+//     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+//     filter: brightness(0.8);
+//   }
+// `;
 
 const Container = styled.div`
   display: flex;
@@ -452,7 +452,7 @@ const Container = styled.div`
 const LargeText = styled(Typography)`
   margin: 40px 0 30px;
   span {
-    color: #e31d78;
+    color: #098d60;
     font-weight: bold;
     font-family: 'Roboto';
   }
@@ -481,7 +481,7 @@ const TotalStakeRow = styled.div`
 const Percentage = styled.div`
   width: 100%;
   height: 40px;
-  background: #1e3580;
+  background: #0f6e80;
   border-radius: 20px;
   margin-top: 30px;
   position: relative;
@@ -491,7 +491,7 @@ const Percentage = styled.div`
 const StakedPercentage = styled.div<{ percentage: number }>`
   width: ${({ percentage }) => percentage}%;
   height: 40px;
-  background: #e31d78;
+  background: #098d60;
   border-radius: 20px;
 `;
 
@@ -504,65 +504,65 @@ const TotalStakeContainer = styled.div`
   }
 `;
 
-const MigrationContainer = styled.div`
-  background: white;
-  margin: 0 auto 150px;
-  width: 1200px;
-  border-radius: 20px;
-  display: flex;
-  padding: 45px 95px;
-  align-items: center;
-  flex: 0 0 100%;
-  border: 5px solid #e31d78;
-  @media (max-width: 1280px) {
-    width: 80%;
-  }
-  @media (max-width: 768px) {
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 15px;
-    text-align: center;
-  }
-`;
+// const MigrationContainer = styled.div`
+//   background: white;
+//   margin: 0 auto 150px;
+//   width: 1200px;
+//   border-radius: 20px;
+//   display: flex;
+//   padding: 45px 95px;
+//   align-items: center;
+//   flex: 0 0 100%;
+//   border: 5px solid #e31d78;
+//   @media (max-width: 1280px) {
+//     width: 80%;
+//   }
+//   @media (max-width: 768px) {
+//     justify-content: center;
+//     flex-wrap: wrap;
+//     padding: 15px;
+//     text-align: center;
+//   }
+// `;
 
-const MigrationPercent = styled.div`
-  div {
-    width: 180px;
-    height: 180px;
-    border-radius: 50%;
-    font-size: 48px;
-    background-color: #e31d78;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`;
-const MigrationAction = styled.div`
-  margin-left: 30px;
-  text-align: left;
-`;
+// const MigrationPercent = styled.div`
+//   div {
+//     width: 180px;
+//     height: 180px;
+//     border-radius: 50%;
+//     font-size: 48px;
+//     background-color: #098d60;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+// `;
+// const MigrationAction = styled.div`
+//   margin-left: 30px;
+//   text-align: left;
+// `;
 
-const Title = styled(Typography)`
-  margin-bottom: 10px;
-  line-height: 40px;
-`;
+// const Title = styled(Typography)`
+//   margin-bottom: 10px;
+//   line-height: 40px;
+// `;
 
-const Button = styled.button`
-  background-color: #e31d78;
-  border-color: #e31d78;
-  border-radius: 20px;
-  color: white;
-  width: auto;
-  font-size: 18px;
-  font-family: Roboto;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 10px 20px;
-  margin: 10px 0;
-  ${buttonBase}
+// const Button = styled.button`
+//   background-color: #098d60;
+//   border-color: #098d60;
+//   border-radius: 20px;
+//   color: white;
+//   width: auto;
+//   font-size: 18px;
+//   font-family: Roboto;
+//   font-weight: bold;
+//   cursor: pointer;
+//   padding: 10px 20px;
+//   margin: 10px 0;
+//   ${buttonBase}
 
-  ${(props) => props.disabled && disabledStyles}
-`;
+//   ${(props) => props.disabled && disabledStyles}
+// `;
 
 const LoadingContent = styled.div`
   padding: 30px;

@@ -83,7 +83,7 @@ color:#FFFFFF80 !important;
 
 const ButtonBase = styled.button`
   all: unset;
-  background: #e31d78;
+  background: #098d60;
   border-radius: 20px;
   cursor: pointer;
   font-weight: bold;

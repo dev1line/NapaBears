@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import FooterBanner from 'assets/v2/footer_banner.png';
+import FooterBanner from 'assets/v2/fthalloween.jpg';
 
 export const FooterContainer = styled.div`
   margin-top: 225px;
@@ -15,7 +15,7 @@ export const FooterContainer = styled.div`
 export const DiscordButton = styled.a`
   padding: 17px 27px;
 
-  background: #e31d78;
+  background: #098d60;
   border-radius: 20px;
   font-style: normal;
   font-weight: bold;

@@ -84,7 +84,7 @@ const FormWrapper = styled.div`
 
 const Button = styled.button`
   all: unset;
-  background: #e31d78;
+  background: #098d60;
   border-radius: 20px;
   cursor: pointer;
   font-size: 24px;

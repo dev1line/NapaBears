@@ -46,7 +46,7 @@ const AccountRow = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background: #e31d78;
+  background: #098d60;
   border-radius: 30px;
   font-size: 16px;
   letter-spacing: 2px;

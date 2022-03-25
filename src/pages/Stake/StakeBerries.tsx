@@ -18,7 +18,7 @@ import { Typography } from './Typography';
 import LockImg from 'assets/v2/lock.png';
 
 export const StakeBerries: FC = () => {
-   const { active, account, connector, library } = useWallet();
+  const { active, account, connector, library } = useWallet();
   const [data, setData] = useState({
     totalRewards: 0,
     balance: 0,
@@ -80,7 +80,7 @@ export const StakeBerries: FC = () => {
         stakedBearOld,
         allowance,
         totalStakeBerries,
-        totalStakedAll
+        totalStakedAll,
       });
       setLoading('');
       message && toast.success(message);
@@ -103,7 +103,7 @@ export const StakeBerries: FC = () => {
           const allowance = await BerriesTokenContract.methods
             .allowance(account, BERRIES_SINGLE_STAKING_CONTRACT)
             .call();
-            console.log(allowance)
+          console.log(allowance);
           const stakedBearOld = await stakeContractOld.methods.depositsOf(account).call();
 
           const stakedBear = await stakeContract.methods.depositsOf(account).call();
@@ -142,7 +142,7 @@ export const StakeBerries: FC = () => {
             stakedBearOld,
             allowance,
             totalStakeBerries,
-            totalStakedAll
+            totalStakedAll,
           });
           setLoading('');
         } catch (err: any) {
@@ -277,27 +277,27 @@ export const StakeBerries: FC = () => {
       </TitleContainer>
       <StakeBerriesContainer>
         <AccountBalance>
-          <TitleAccountBalance fontSize={30} color="#B4C4FB" strong  lineHeight='33px'>
+          <TitleAccountBalance fontSize={30} color="#B4C4FB" strong lineHeight="33px">
             Total Staked
           </TitleAccountBalance>
-          <AmountStaked strong fontSize={36}  lineHeight="40px">
+          <AmountStaked strong fontSize={36} lineHeight="40px">
             {totalStakedAll} $BERRIES
           </AmountStaked>
           <LockImage src={LockImg} alt="lockimg" />
         </AccountBalance>
         <ClaimRewards>
-          <TitleClaimRewards fontSize={30} color="#B4C4FB" strong  lineHeight='33px'>
+          <TitleClaimRewards fontSize={30} color="#B4C4FB" strong lineHeight="33px">
             Rewards{' '}
             <Button onClick={handleClaimRewards} disabled={Number(totalRewards) === 0}>
               Claim
             </Button>
           </TitleClaimRewards>
-          <ClaimRewardAmount strong fontSize={36}  lineHeight="40px">
+          <ClaimRewardAmount strong fontSize={36} lineHeight="40px">
             {Number(library?.utils?.fromWei('' + totalRewards, 'ether') || 0).toFixed(2)} $BERRIES
           </ClaimRewardAmount>
         </ClaimRewards>
         <UnStake>
-          <TitleUnStake fontSize={30} color="#B4C4FB" strong lineHeight='33px'>
+          <TitleUnStake fontSize={30} color="#B4C4FB" strong lineHeight="33px">
             $Berries Staked
             <Button
               onClick={() => {
@@ -311,12 +311,12 @@ export const StakeBerries: FC = () => {
               Withdraw All
             </Button>
           </TitleUnStake>
-          <Typography fontSize={35} strong margin="10px 0 0"  lineHeight="40px">
+          <Typography fontSize={35} strong margin="10px 0 0" lineHeight="40px">
             {Number(library?.utils?.fromWei('' + totalStakeBerries, 'ether') || 0).toFixed(2)} $BERRIES
           </Typography>
         </UnStake>
         <Stake>
-          <TitleStake fontSize={30} color="#B4C4FB" strong  lineHeight='33px'>
+          <TitleStake fontSize={30} color="#B4C4FB" strong lineHeight="33px">
             $Berries Balance
             <Button onClick={() => toggleOpen('stakeModal')} disabled={+allowance === 0 || Number(balance) === 0}>
               Stake
@@ -378,15 +378,15 @@ const disabledStyles = `
         color:#FFFFFF80 !important;
     }
     &:hover {
-        background-color: #e31d78;
+        background-color: #098d60;
         box-shadow: none !important;
         filter: none !important;
       }
 `;
 
 const Button = styled.button`
-  background-color: #e31d78;
-  border-color: #e31d78;
+  background-color: #098d60;
+  border-color: #098d60;
   border-radius: 20px;
   color: white;
   width: auto;
@@ -430,7 +430,7 @@ const TitleAccountBalance = styled(Typography)`
 `;
 
 const AccountBalance = styled.div`
-  background: #1e3580;
+  background: #0f6e80;
   width: 49%;
   border-radius: 20px;
   padding: 40px 45px 45px;
@@ -450,7 +450,7 @@ const AccountBalance = styled.div`
 `;
 
 const ClaimRewards = styled.div`
-  background: #1e3580;
+  background: #0f6e80;
   width: 49%;
   border-radius: 20px;
   padding: 20px 45px 45px;
@@ -460,7 +460,7 @@ const ClaimRewards = styled.div`
   }
   @media (max-width: 560px) {
     button {
-      margin-top:20px;
+      margin-top: 20px;
     }
   }
 `;
@@ -506,7 +506,7 @@ const ClaimRewardAmount = styled(Typography)`
 `;
 
 const UnStake = styled.div`
-  background: #1e3580;
+  background: #0f6e80;
   width: 49%;
   border-radius: 20px;
   padding: 20px 45px 45px;
@@ -516,13 +516,13 @@ const UnStake = styled.div`
   }
   @media (max-width: 560px) {
     button {
-      margin-top:20px;
+      margin-top: 20px;
     }
   }
 `;
 
 const Stake = styled.div`
-  background: #1e3580;
+  background: #0f6e80;
   width: 49%;
   border-radius: 20px;
   padding: 20px 45px 45px;
@@ -532,7 +532,7 @@ const Stake = styled.div`
   }
   @media (max-width: 560px) {
     button {
-      margin-top:20px;
+      margin-top: 20px;
     }
   }
 `;

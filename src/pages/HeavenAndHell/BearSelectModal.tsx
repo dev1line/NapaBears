@@ -102,7 +102,7 @@ const BearImg = styled.div`
     border-radius: 10px;
   }
   &.selected {
-    background: #e31d78;
+    background: #098d60;
   }
   p {
     text-align: center;
@@ -124,7 +124,7 @@ const ModalWrap = styled.div`
   max-width: 530px;
   min-width: 500px;
   position: fixed;
-  background-color: #1e3580;
+  background-color: #0f6e80;
   color: white;
   padding: 40px;
   border-radius: 8px;
@@ -170,7 +170,7 @@ const CloseModalButton = styled.button`
     content: ' ';
     height: 33px;
     width: 5px;
-    background-color: #e31d78;
+    background-color: #098d60;
   }
   &::before {
     transform: rotate(45deg);
@@ -219,7 +219,7 @@ const ButtonWrap = styled.div`
 const Button = styled.button`
   border: none;
   outline: none;
-  background-color: #e31d78;
+  background-color: #098d60;
   width: 300px;
   height: 50px;
   border-radius: 20px;

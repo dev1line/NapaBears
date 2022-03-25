@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styled from 'styled-components';
-import MetaBearText from 'assets/v2/metabear_text.svg';
+// import MetaBearText from 'assets/v2/metabear_text.svg';
 import { Col, Container, Row } from 'styled-bootstrap-grid';
 import Twitter from 'assets/v2/twitter.svg';
 import Etherscan from 'assets/v2/etherscan.svg';
@@ -14,7 +14,7 @@ const FooterComponent: FC = () => {
       <Container>
         <Row alignItems="start" justifyContent="between">
           <Col alignSelf="center" xs={24} md={12} lg={8}>
-            <MetaBearLogo src={MetaBearText} />
+            {/* <MetaBearLogo src={MetaBearText} /> */}
           </Col>
           <Col xs={24} md={12} lg={8}>
             <HeadLine>CONTENT</HeadLine>
@@ -27,7 +27,7 @@ const FooterComponent: FC = () => {
               <Link to="/">Event</Link>
             </Typo> */}
             <Typo>
-              <a href="https://snapshot.org/#/halloweenbearsdao.eth" target="_blank" rel="noopener noreferrer">
+              <a href="/" target="_blank" rel="noopener noreferrer">
                 DAO Vote
               </a>
             </Typo>
@@ -35,20 +35,20 @@ const FooterComponent: FC = () => {
           <Col xs={24} md={24} lg={6}>
             <HeadLine>LINKS</HeadLine>
             <Row>
-              <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/jyT6TK6KVe">
+              <a target="_blank" rel="noopener noreferrer" href="https://discord.gg/">
                 <SocialImg src={Discord} />
               </a>
-              <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/MetabearsDAO">
+              <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/">
                 <SocialImg src={Twitter} />
               </a>
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://etherscan.io/address/0xd4048be096f969f51fd5642a9c744ec2a7eb89fe"
+                href="https://rinkeby.etherscan.io/address/0x3b7b8d29d7df3684Fc6E43Dd6B93377F956f30b3"
               >
                 <SocialImg src={Etherscan} />
               </a>
-              <a target="_blank" rel="noopener noreferrer" href="https://opensea.io/collection/halloweenbears">
+              <a target="_blank" rel="noopener noreferrer" href="https://testnets.opensea.io/">
                 <SocialImg src={Opensea} />
               </a>
             </Row>
@@ -59,7 +59,7 @@ const FooterComponent: FC = () => {
         <PolicyContainer>
           <PolicyTypo>Terms and conditions</PolicyTypo>
           <PolicyTypo>Privacy</PolicyTypo>
-          <PolicyTypo>© 2021 Metabears</PolicyTypo>
+          <PolicyTypo>© 2021 SBears</PolicyTypo>
         </PolicyContainer>
       </Container>
     </Footer>
@@ -73,10 +73,10 @@ const Footer = styled.footer`
   padding-bottom: 50px;
 `;
 
-const MetaBearLogo = styled.img`
-  width: 293px;
-  height: 40px;
-`;
+// const MetaBearLogo = styled.img`
+//   width: 293px;
+//   height: 40px;
+// `;
 
 const HeadLine = styled.h1`
   font-style: normal;
@@ -85,7 +85,7 @@ const HeadLine = styled.h1`
   line-height: 32px;
   text-transform: uppercase;
   margin-bottom: 10px;
-  color: #e31d78;
+  color: #098d60;
   @media (max-width: 1024px) {
     margin-top: 32px;
   }

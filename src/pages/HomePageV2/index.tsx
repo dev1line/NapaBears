@@ -26,13 +26,12 @@ export default function HomePageV2(props: HomePageV2Props) {
       <StakeBerries />
 
       <Header executeScroll={executeScroll} />
-
     </Container>
   );
 }
 
 const Container = styled.div`
-  background-color: #6e3b9e;
+  background-color: #053445;
   color: white;
   font-family: 'Roboto Mono';
   min-height: 87vh;

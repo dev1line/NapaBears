@@ -67,7 +67,7 @@ const Typo = styled.p`
 const DisconnectButton = styled.button`
   border: none;
   outline: none;
-  background-color: #e31d78;
+  background-color: #098d60;
   width: 300px;
   height: 50px;
   border-radius: 20px;
@@ -137,7 +137,7 @@ const Container = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  background-color: #1e3580;
+  background-color: #0f6e80;
   color: white;
   padding: 60px 40px;
   border-radius: 8px;

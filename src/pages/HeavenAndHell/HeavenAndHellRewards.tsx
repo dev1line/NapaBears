@@ -44,15 +44,15 @@ const disabledStyles = `
         color:#FFFFFF80 !important;
     }
     &:hover {
-        background-color: #e31d78;
+        background-color: #098d60;
         box-shadow: none !important;
         filter: none !important;
       }
 `;
 
 const Button = styled.button`
-  background-color: #e31d78;
-  border-color: #e31d78;
+  background-color: #098d60;
+  border-color: #098d60;
   border-radius: 20px;
   color: white;
   width: auto;
@@ -68,7 +68,7 @@ const Button = styled.button`
 `;
 
 const ClaimRewards = styled.div`
-  background: #1e3580;
+  background: #0f6e80;
   width: 100%;
   border-radius: 20px;
   padding: 20px 45px 45px;

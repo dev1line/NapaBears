@@ -197,7 +197,7 @@ const disabledStyles = `
         color:#FFFFFF80 !important;
     }
     &:hover {
-        background-color: #e31d78;
+        background-color: #098d60;
         box-shadow: none !important;
         filter: none !important;
       }
@@ -216,8 +216,8 @@ const buttonBase = css`
 `;
 
 const Button = styled.button`
-  background-color: #e31d78;
-  border-color: #e31d78;
+  background-color: #098d60;
+  border-color: #098d60;
   border-radius: 20px;
   color: white;
   width: auto;
@@ -269,7 +269,7 @@ const TitleAccountBalance = styled(Typography)`
   }
 `;
 const AccountBalance = styled.div`
-  background: #1e3580;
+  background: #0f6e80;
   width: 49%;
   border-radius: 20px;
   padding: 20px 45px 45px;
@@ -280,7 +280,7 @@ const AccountBalance = styled.div`
 `;
 
 const ClaimRewards = styled.div`
-  background: #1e3580;
+  background: #0f6e80;
   width: 49%;
   border-radius: 20px;
   padding: 20px 45px 45px;
@@ -295,7 +295,7 @@ const ClaimRewardAmount = styled(Typography)`
 `;
 
 const StakeBear = styled.div`
-  background: #1e3580;
+  background: #0f6e80;
   width: 49%;
   border-radius: 20px;
   padding: 20px 45px 45px;
@@ -306,7 +306,7 @@ const StakeBear = styled.div`
   }
 `;
 const UnstakeBear = styled.div`
-  background: #1e3580;
+  background: #0f6e80;
   width: 49%;
   border-radius: 20px;
   padding: 20px 45px 45px;
@@ -380,7 +380,7 @@ const BearImg = styled.div`
     border-radius: 10px;
   }
   &.selected {
-    background: #e31d78;
+    background: #098d60;
   }
   p {
     text-align: center;

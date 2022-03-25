@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
       width: 100%;
       height: 100%;
-      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #050A18;
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #064056;
       color: #ffffff;
   }
   *,
@@ -81,7 +81,7 @@ export const GlobalStyle = createGlobalStyle`
   width: 0;
 
   &:focus ~ .checkbox-checkmark-box {
-    border-color: #e31d78;
+    border-color: #098d60;
   }
 
   &:checked ~ .checkbox-checkmark-box {
@@ -94,7 +94,7 @@ export const GlobalStyle = createGlobalStyle`
 
   &:checked ~ .checkbox-checkmark-box {
     .checkbox-checkmark {
-      background-color: #e31d78;
+      background-color: #098d60;
       border: 2px solid #e31d78;
     }
   }

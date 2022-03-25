@@ -21,7 +21,7 @@ export default Collapse;
 
 const Wrapper = styled.div<{ open: boolean }>`
   width: 100%;
-  background: #1e3580;
+  background: #0f6e80;
   border-radius: 20px;
   padding-left: 95px;
   padding-right: 62px;
@@ -40,7 +40,9 @@ const Wrapper = styled.div<{ open: boolean }>`
 const Tag = styled.div`
   height: 33px;
   padding: 0px 16px;
-  background: #e31d78;
+
+  background-color: #098d60;
+  border-color: #9aff4f;
   border-radius: 20px;
   font-style: normal;
   font-weight: bold;

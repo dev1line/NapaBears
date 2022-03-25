@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import styled, { css } from 'styled-components';
 
-import Logo from 'assets/v2/logo.png';
+// import Logo from 'assets/v2/logo.png';
 import { Container } from 'styled-bootstrap-grid';
 import { Link, NavLink } from 'react-router-dom';
 import { AccountInfo } from 'pages/Stake/AccountInfo';
@@ -19,9 +19,7 @@ const Navbar: FC = () => {
       <NavInner>
         <NavMain>
           <Hamburger open={open} onClick={toggleOpen} />
-          <Link to="/">
-            <LogoImage src={Logo} />
-          </Link>
+          <Link to="/">{/* <LogoImage src={Logo} /> */}</Link>
 
           <NavList open={open}>
             {/* <NavLink to={routesEnum.berries}>$BERRIES</NavLink> */}
@@ -32,7 +30,7 @@ const Navbar: FC = () => {
                 <NavLink to={routesEnum.heavenAndHell}>Heaven or Hell</NavLink>
               </NavbarDropdownContent>
             </NavbarDropdown>
-            <a href="https://snapshot.org/#/halloweenbearsdao.eth">DAO Vote</a>
+            <a href="/">DAO Vote</a>
           </NavList>
         </NavMain>
         <AccountInfo />
@@ -97,14 +95,14 @@ const Hamburger = styled.div<{ open: boolean }>`
     `}
 `;
 
-const LogoImage = styled.img`
-  width: 60px;
-  height: 60px;
-  margin-right: 52px;
-  @media (max-width: 768px) {
-    margin-right: 0px;
-  }
-`;
+// const LogoImage = styled.img`
+//   width: 60px;
+//   height: 60px;
+//   margin-right: 52px;
+//   @media (max-width: 768px) {
+//     margin-right: 0px;
+//   }
+// `;
 
 const NavMain = styled.div`
   display: flex;
@@ -122,7 +120,7 @@ const NavList = styled.div<{ open?: boolean }>`
     font-weight: bold;
     font-size: 24px;
     line-height: 28px;
-    color: #e31d78;
+    color: #098d60;
   }
 
   @media (max-width: 1240px) {
@@ -172,7 +170,7 @@ const NavbarDropdownContent = styled.div`
   & * {
     white-space: nowrap;
     padding: 7px 24px;
-    background: #e31d78;
+    background: #098d60;
     text-decoration: none;
     font-style: normal;
     font-size: 24px;

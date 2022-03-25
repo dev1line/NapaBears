@@ -63,7 +63,7 @@ const WalletPopup = styled.div<{ open: boolean }>`
   min-width: 500px;
   position: fixed;
   padding: 55px;
-  background: #1e3580;
+  background: #0f6e80;
   overflow: hidden;
   z-index: -1;
   visibility: hidden;
@@ -94,8 +94,8 @@ const WalletPopup = styled.div<{ open: boolean }>`
 `;
 
 const ConnectButton = styled.button`
-  background-color: #e31d78;
-  border-color: #e31d78;
+  background-color: #098d60;
+  border-color: #098d60;
   border-radius: 20px;
   color: white;
   width: 240px;
@@ -122,8 +122,8 @@ const ConnectButton = styled.button`
 `;
 
 const Button = styled.button`
-  background-color: #e31d78;
-  border-color: #e31d78;
+  background-color: #098d60;
+  border-color: #098d60;
   border-radius: 20px;
   color: white;
   width: 240px;
@@ -155,7 +155,7 @@ const CloseButton = styled.button`
     top: 0;
     height: 28px;
     width: 4px;
-    background-color: #e31d78;
+    background-color: #098d60;
   }
   &::before {
     transform: rotate(45deg);

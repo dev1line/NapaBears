@@ -23,7 +23,7 @@ export default function StakePage(props: StakePageProps) {
 
 const Container = styled.div`
   margin-top: 200px;
-  background-color: #040813;
+  background-color: #053445;
   color: white;
   font-family: 'Roboto Mono';
   min-height: 100vh;
