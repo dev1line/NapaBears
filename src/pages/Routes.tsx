@@ -4,7 +4,7 @@ import { Route, RouteProps, Switch } from 'react-router-dom';
 export enum routesEnum {
   home = '/',
   stake = '/stake',
-  berries = '/berries',
+  napas = '/napas',
   heavenAndHell = '/heaven-n-hell',
 }
 const routes: RouteProps[] = [
@@ -18,11 +18,11 @@ const routes: RouteProps[] = [
     exact: true,
     component: lazy(() => import('./Stake')),
   },
-  // {
-  //   path: routesEnum.berries,
-  //   exact: true,
-  //   component: lazy(() => import('./Berries')),
-  // },
+  {
+    path: routesEnum.napas,
+    exact: true,
+    component: lazy(() => import('./Berries')),
+  },
   {
     path: routesEnum.heavenAndHell,
     exact: true,

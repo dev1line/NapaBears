@@ -16,7 +16,7 @@ const LiquidSection: FC = () => {
             fontSize={48}
             fontWeight="bold"
             lineHeight={56}
-            color="#E31D78"
+            color="#098d60"
           >
             $NAPAS&nbsp;
           </TypographySpan>
@@ -30,9 +30,9 @@ const LiquidSection: FC = () => {
         extra $NAPAS you receive is determined by how many tokens you stake relative to the whole pool.
         <br /> <br />
         Stakers in LP #2 earn a portion of the 15,000 $NAPAS emitted each day. Participating in LP #2 requires
-        purchasing LP tokens by combining equal amounts of $NAPAS and ETH. The amount of ETH needed to make one LP token
-        is relative to the market price of $NAPAS at the time you purchase the LP token. For additional instructions on
-        how to do this, see 📖│staking-tutorials.
+        purchasing LP tokens by combining equal amounts of $NAPAS and WETH. The amount of WETH needed to make one LP
+        token is relative to the market price of $NAPAS at the time you purchase the LP token. For additional
+        instructions on how to do this, see 📖│staking-tutorials.
         <br /> <br />
         Stakers in LP #3 earn a portion of the 3,000 $NAPAS emitted each day. Participating in LP #3 is less risky and
         cheaper than LP #2 in that it only requires staking $NAPAS, but in turn the rewards are reduced.

@@ -26,8 +26,8 @@ const FooterComponent: FC = () => {
               <Link to="/heaven-n-hell">Roll Event</Link>
             </Typo>
             <Typo>
-              <a href="/" target="_blank" rel="noopener noreferrer">
-                DAO
+              <a href="/napas" target="_blank" rel="noopener noreferrer">
+                $NAPAS Detail
               </a>
             </Typo>
           </Col>

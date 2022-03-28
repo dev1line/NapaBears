@@ -16,7 +16,7 @@ const UtilitySection: FC = () => {
             fontSize={48}
             fontWeight="bold"
             lineHeight={56}
-            color="#E31D78"
+            color="#098d60"
           >
             $NAPAS&nbsp;
           </TypographySpan>

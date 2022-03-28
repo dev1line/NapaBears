@@ -31,7 +31,7 @@ const Navbar: FC = () => {
                 <NavLink to={routesEnum.heavenAndHell}>Heaven or Hell</NavLink>
               </NavbarDropdownContent>
             </NavbarDropdown>
-            <a href="/">DAO</a>
+            <a href="/napas">$NAPAS Detail</a>
           </NavList>
         </NavMain>
         <AccountInfo />

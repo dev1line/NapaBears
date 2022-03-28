@@ -1,10 +1,15 @@
 import styled, { css } from 'styled-components';
 
-export const Box = styled.div<{ mt?: number }>`
+export const Box = styled.div<{ mt?: number; mb?: number }>`
   ${(p) =>
     p.mt &&
     css`
       margin-top: ${p.mt}px;
+    `}
+  ${(p) =>
+    p.mb &&
+    css`
+      margin-bottom: ${p.mb}px;
     `}
 `;
 

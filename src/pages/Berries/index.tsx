@@ -5,7 +5,7 @@ import WhatBerriesSection from './WhatBerriesSection';
 import UtilitySection from './UtilitySection';
 import TokenomicSection from './TokenomicSection';
 import LiquidSection from './LiquidSection';
-
+import Others from './Others';
 const BerriesPage: FC = () => {
   return (
     <BerriesContainer>
@@ -14,6 +14,7 @@ const BerriesPage: FC = () => {
         <UtilitySection />
         <TokenomicSection />
         <LiquidSection />
+        <Others />
       </Container>
     </BerriesContainer>
   );

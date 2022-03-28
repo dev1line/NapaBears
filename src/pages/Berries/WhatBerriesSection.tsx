@@ -18,7 +18,7 @@ const WhatBerriesSection: FC = () => {
             fontSize={48}
             fontWeight="bold"
             lineHeight={56}
-            color="#E31D78"
+            color="#098d60"
           >
             $NAPAS?
           </TypographySpan>
@@ -29,7 +29,7 @@ const WhatBerriesSection: FC = () => {
         <Col xs={24} xl={15}>
           <Typography mdFontSize={18} mt={24} fontSize={24} lineHeight={28} align="justify">
             $NAPAS is the utility token that fuels within Napa World ecosystem and hold no monetary value.&nbsp;
-            <TypographySpan mdFontSize={18} fontSize={24} lineHeight={28} color="#E31D78">
+            <TypographySpan mdFontSize={18} fontSize={24} lineHeight={28} color="#098d60">
               (1 $NAPAS = 1 $NAPAS)
             </TypographySpan>
             . They exist in a limited supply and will become scarcer as tokens are burned for various utilities. $NAPAS
@@ -40,7 +40,7 @@ const WhatBerriesSection: FC = () => {
         <Col xs={24} xl={9}>
           <SupplyCard>
             <Typography mdFontSize={18} fontSize={24} fontWeight="bold" lineHeight={28}>
-              <TypographySpan mdFontSize={18} fontWeight="bold" fontSize={24} lineHeight={28} color="#E31D78">
+              <TypographySpan mdFontSize={18} fontWeight="bold" fontSize={24} lineHeight={28} color="#098d60">
                 $NAPAS&nbsp;
               </TypographySpan>
               Total Supply
@@ -51,13 +51,13 @@ const WhatBerriesSection: FC = () => {
             </Typography>
 
             <Typography mdFontSize={18} fontSize={24} fontWeight="bold" lineHeight={28}>
-              <TypographySpan mdFontSize={18} fontWeight="bold" fontSize={24} lineHeight={28} color="#E31D78">
+              <TypographySpan mdFontSize={18} fontWeight="bold" fontSize={24} lineHeight={28} color="#098d60">
                 $NAPAS&nbsp;
               </TypographySpan>
               Smart Contract
             </Typography>
-            <Typography mdFontSize={16} mt={6}>
-              {/* 0x3cbaecef82e3a1ba1d01f9acb60883bdf11f4ee2 */}
+            <Typography mt={6} fontSize={14}>
+              0x70522B26A1A31272dAAABD2D3810203a0f3Fa234
             </Typography>
           </SupplyCard>
         </Col>
