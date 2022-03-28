@@ -226,7 +226,7 @@ const StakeLP: FC = () => {
                   <p> CURRENT REWARDS </p>
                   <div>
                     <StakeBearTypo>
-                      {Number(library?.utils?.fromWei('' + totalRewards, 'ether') || 0).toFixed(2)} $BERRIES
+                      {Number(library?.utils?.fromWei('' + totalRewards, 'ether') || 0).toFixed(2)} $NAPAS
                     </StakeBearTypo>{' '}
                     <ClaimButton onClick={handleClaimRewards} disabled={Number(totalRewards) === 0}>
                       Claim

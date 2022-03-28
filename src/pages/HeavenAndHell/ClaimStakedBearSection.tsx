@@ -25,9 +25,9 @@ const ClaimStakedBearSection = ({ balance, stakedBear, availStakedBears, handleR
           <Row justifyContent="center" alignItems="center">
             <>
               <Col xs={24} lg={13}>
-                <Typography {...TypoProps}>$BERRIES Balance: ${Number(balance).toFixed(2)}</Typography>
+                <Typography {...TypoProps}>$NAPAS Balance: ${Number(balance).toFixed(2)}</Typography>
                 <Typography mt={15} mb={15} {...TypoProps}>
-                  Total Staked Halloween Bears: {stakedBear.length}&nbsp;
+                  Total Staked NapaBears: {stakedBear.length}&nbsp;
                   <TypographySpan {...TypoProps} fontWeight="normal">
                     (Available: {availStakedBears.length}, Rolled: {stakedBear.length - availStakedBears.length})
                   </TypographySpan>

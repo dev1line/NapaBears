@@ -16,7 +16,7 @@ const HomePage: FC = () => {
       <HalloweenBearSection />
       <ThreeDot />
       <HeavenAndHellSection />
-      <ThreeDot />
+      {/* <ThreeDot /> */}
       <DevolopmentSection />
       <FooterSection />
     </>

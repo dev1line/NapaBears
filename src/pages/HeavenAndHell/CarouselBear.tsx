@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import BearSlideImage from 'assets/v2/bear_slide.svg';
-import HNH from 'assets/v2/ghost.jpg';
+import HNH from 'assets/v2/global.jpg';
 
 const CarouselBear = () => {
   return (

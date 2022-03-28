@@ -18,17 +18,16 @@ const FooterComponent: FC = () => {
           </Col>
           <Col xs={24} md={12} lg={8}>
             <HeadLine>CONTENT</HeadLine>
-            {/* <Typo>$BERRIES</Typo> */}
+            {/* <Typo>$NAPAS</Typo> */}
             <Typo>
-              <Link to="/stake">Stake & Earn $BERRIES</Link>
+              <Link to="/stake">Stake & Earn $NAPAS</Link>
             </Typo>
-            {/* <Typo>
-              {' '}
-              <Link to="/">Event</Link>
-            </Typo> */}
+            <Typo>
+              <Link to="/heaven-n-hell">Roll Event</Link>
+            </Typo>
             <Typo>
               <a href="/" target="_blank" rel="noopener noreferrer">
-                DAO Vote
+                DAO
               </a>
             </Typo>
           </Col>
@@ -44,11 +43,11 @@ const FooterComponent: FC = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://rinkeby.etherscan.io/address/0x3b7b8d29d7df3684Fc6E43Dd6B93377F956f30b3"
+                href="https://rinkeby.etherscan.io/address/0x2b2758787De93EF68aDd99590405e1380470Ec66"
               >
                 <SocialImg src={Etherscan} />
               </a>
-              <a target="_blank" rel="noopener noreferrer" href="https://testnets.opensea.io/">
+              <a target="_blank" rel="noopener noreferrer" href="https://testnets.opensea.io/collection/allnapabears">
                 <SocialImg src={Opensea} />
               </a>
             </Row>
@@ -59,7 +58,7 @@ const FooterComponent: FC = () => {
         <PolicyContainer>
           <PolicyTypo>Terms and conditions</PolicyTypo>
           <PolicyTypo>Privacy</PolicyTypo>
-          <PolicyTypo>© 2021 SBears</PolicyTypo>
+          <PolicyTypo>© 2022 Napa World</PolicyTypo>
         </PolicyContainer>
       </Container>
     </Footer>

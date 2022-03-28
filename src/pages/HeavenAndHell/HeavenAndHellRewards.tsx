@@ -17,7 +17,7 @@ const HeavenAndHellRewards = ({ handleClaimAngelRewards, angelRewards, paused }:
           </Button>
         </TitleClaimRewards>
         <ClaimRewardAmount strong fontSize={36} lineHeight="40px">
-          {Number(library?.utils?.fromWei('' + angelRewards, 'ether') || 0).toFixed(2)} $BERRIES
+          {Number(library?.utils?.fromWei('' + angelRewards, 'ether') || 0).toFixed(2)} $NAPAS
         </ClaimRewardAmount>
       </ClaimRewards>
     </Container>

@@ -17,6 +17,6 @@ export const walletconnect = new WalletConnectConnector({
 
 export const walletlink = new WalletLinkConnector({
   url: INFURA_ENDPOINT,
-  appName: 'Halloween Bear',
+  appName: 'Napa Bear',
   supportedChainIds: [NETWORK_CHAIN_IDS.rinkeby, NETWORK_CHAIN_IDS.mainnet],
 });

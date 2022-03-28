@@ -78,13 +78,13 @@ export const StakeBears = ({
     <>
       <TitleContainer>
         <Typography fontSize={48} strong margin="10px 0 30px " lineHeight="45px">
-          Stake Halloween Bears
+          Stake NapaBears
         </Typography>
         <Typography fontSize={18} margin="10px 0 ">
-          2 $BERRIES/day per staked bear
+          2 $NAPAS/day per staked bear
         </Typography>
         <Typography fontSize={18} margin="10px 0 ">
-          Earn an additional 7 $BERRIES when staking for 1 week, deposited at the end of 7 days
+          Earn an additional 7 $NAPAS when staking for 1 week, deposited at the end of 7 days
         </Typography>
         {!isApprovedForAll && <Button onClick={handleApprove}>Approve Bear Staking</Button>}
       </TitleContainer>
@@ -95,7 +95,7 @@ export const StakeBears = ({
             Account Balance <Button onClick={handleDisconnect}>Disconnect</Button>
           </TitleAccountBalance>
           <Typography strong fontSize={36} lineHeight="40px">
-            {Number(balance).toFixed(2)} $BERRIES
+            {Number(balance).toFixed(2)} $NAPAS
           </Typography>
         </AccountBalance>
         <ClaimRewards>
@@ -109,7 +109,7 @@ export const StakeBears = ({
             </Button>
           </TitleAccountBalance>
           <ClaimRewardAmount strong fontSize={36} lineHeight="40px">
-            {Number(totalRewards || 0).toFixed(2)} $BERRIES
+            {Number(totalRewards || 0).toFixed(2)} $NAPAS
           </ClaimRewardAmount>
         </ClaimRewards>
         <UnstakeBear>

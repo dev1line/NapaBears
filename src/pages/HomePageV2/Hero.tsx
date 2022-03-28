@@ -279,7 +279,7 @@ const Hero: FC = () => {
               <Navbar>
                 <ButtonBuyOnOpenSea>
                   {' '}
-                  <a href="https://opensea.io/collection/halloweenbears" target="blank">
+                  <a href="https://testnets.opensea.io/collection/allnapabears" target="blank">
                     Buy on Opensea
                   </a>
                 </ButtonBuyOnOpenSea>
@@ -294,17 +294,17 @@ const Hero: FC = () => {
           </Row>
           <Row justifyContent="end">
             <Col xs={24}>
-              <HalloBearTypo>Halloween Bear</HalloBearTypo>
+              <HalloBearTypo>Napa Bear</HalloBearTypo>
             </Col>
           </Row>
-          <Text>1.5x until Wednesday nov 10 for all previous $BERRIES stakers</Text>
+          <Text>1.5x until Wednesday nov 10 for all previous $NAPAS stakers</Text>
 
           <Hide if={!active}>
             <Row justifyContent="start">
               <Col xs={24} lg={10}>
                 <Card>
                   <p>Account Balance</p>
-                  <div>{Number(balance).toFixed(2)} $BERRIES</div>
+                  <div>{Number(balance).toFixed(2)} $NAPAS</div>
                 </Card>
               </Col>
               <Col xs={24} lg={10}>
@@ -320,7 +320,7 @@ const Hero: FC = () => {
                 <Card>
                   <p> {stakedBear.length} Staked Bears</p>
                   <div>
-                    <StakeBearTypo>{Number(totalRewards || 0).toFixed(2)} $BERRIES</StakeBearTypo>{' '}
+                    <StakeBearTypo>{Number(totalRewards || 0).toFixed(2)} $NAPAS</StakeBearTypo>{' '}
                     <ClaimButton
                       onClick={handleClaimRewards}
                       disabled={Number(totalRewards) === 0 || !isApprovedForAll || stakedBear.length === 0}

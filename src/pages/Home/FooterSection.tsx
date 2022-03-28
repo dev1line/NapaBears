@@ -12,7 +12,7 @@ const FooterSection = () => {
             <Typography mb={32} fontSize={48} lineHeight={56} fontWeight="bold">
               Grab a Bear and Save <br /> the Metaverse
             </Typography>
-            <DiscordButton target="_blank" rel="noopener noreferrer" href="https://discord.gg/jyT6TK6KVe">
+            <DiscordButton target="_blank" rel="noopener noreferrer" href="/">
               Join Discord Community
             </DiscordButton>
           </Col>

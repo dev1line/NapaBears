@@ -221,12 +221,12 @@ const StakeBerries: FC = () => {
         <StyledContainer className="relative">
           <Row justifyContent="center">
             <Col xs={24}>
-              <StakeTypo>Stake Your BERRIES</StakeTypo>
+              <StakeTypo>Stake Your NAPAS</StakeTypo>
             </Col>
           </Row>
           {/* <Row justifyContent="end">
             <Col xs={24}>
-              <HalloBearTypo>Halloween Bear</HalloBearTypo>
+              <HalloBearTypo>Napa Bear</HalloBearTypo>
             </Col>
           </Row> */}
 
@@ -237,7 +237,7 @@ const StakeBerries: FC = () => {
                   <p> CURRENT REWARDS </p>
                   <div>
                     <StakeBearTypo>
-                      {Number(library?.utils?.fromWei('' + totalRewards, 'ether') || 0).toFixed(2)} $BERRIES
+                      {Number(library?.utils?.fromWei('' + totalRewards, 'ether') || 0).toFixed(2)} $NAPAS
                     </StakeBearTypo>{' '}
                     <ClaimButton onClick={handleClaimRewards} disabled={Number(totalRewards) === 0}>
                       Claim
@@ -316,10 +316,10 @@ const StakeBerries: FC = () => {
         </StyledContainer>
       </HeroWrapper>
       {open.stakeModal && (
-        <StakeLPModal handleStake={handleStake} onClose={() => toggleOpen('stakeModal')} name="$BERRIES" />
+        <StakeLPModal handleStake={handleStake} onClose={() => toggleOpen('stakeModal')} name="$NAPAS" />
       )}
       {open.unStakeModal && (
-        <UnStakeLPModal handleUnstake={handleUnstake} onClose={() => toggleOpen('unStakeModal')} name="$BERRIES" />
+        <UnStakeLPModal handleUnstake={handleUnstake} onClose={() => toggleOpen('unStakeModal')} name="$NAPAS" />
       )}
     </>
   );

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import HeroBackground from 'assets/v2/abc.webp';
+import HeroBackground from 'assets/v2/global.webp';
 
 export const HeroContainer = styled.div`
   position: relative;

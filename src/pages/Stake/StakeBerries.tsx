@@ -268,12 +268,10 @@ export const StakeBerries: FC = () => {
       )}
       <TitleContainer>
         <Typography fontSize={48} strong lineHeight="50px">
-          Stake your Berries{' '}
+          Stake your NAPAS{' '}
         </Typography>
-        <Typography fontSize={18}>
-          Stake your $BERRIES and earn more $BERRIES (Total Pool = 3,000 $BERRIES/day)
-        </Typography>
-        {+allowance === 0 && <Button onClick={handleApprove}>Approve $BERRIES Staking</Button>}
+        <Typography fontSize={18}>Stake your $NAPAS and earn more $NAPAS (Total Pool = 3,000 $NAPAS/day)</Typography>
+        {+allowance === 0 && <Button onClick={handleApprove}>Approve $NAPAS Staking</Button>}
       </TitleContainer>
       <StakeBerriesContainer>
         <AccountBalance>
@@ -281,7 +279,7 @@ export const StakeBerries: FC = () => {
             Total Staked
           </TitleAccountBalance>
           <AmountStaked strong fontSize={36} lineHeight="40px">
-            {totalStakedAll} $BERRIES
+            {totalStakedAll} $NAPAS
           </AmountStaked>
           <LockImage src={LockImg} alt="lockimg" />
         </AccountBalance>
@@ -293,12 +291,12 @@ export const StakeBerries: FC = () => {
             </Button>
           </TitleClaimRewards>
           <ClaimRewardAmount strong fontSize={36} lineHeight="40px">
-            {Number(library?.utils?.fromWei('' + totalRewards, 'ether') || 0).toFixed(2)} $BERRIES
+            {Number(library?.utils?.fromWei('' + totalRewards, 'ether') || 0).toFixed(2)} $NAPAS
           </ClaimRewardAmount>
         </ClaimRewards>
         <UnStake>
           <TitleUnStake fontSize={30} color="#B4C4FB" strong lineHeight="33px">
-            $Berries Staked
+            $NAPAS Staked
             <Button
               onClick={() => {
                 toggleOpen('unStakeModal');
@@ -312,12 +310,12 @@ export const StakeBerries: FC = () => {
             </Button>
           </TitleUnStake>
           <Typography fontSize={35} strong margin="10px 0 0" lineHeight="40px">
-            {Number(library?.utils?.fromWei('' + totalStakeBerries, 'ether') || 0).toFixed(2)} $BERRIES
+            {Number(library?.utils?.fromWei('' + totalStakeBerries, 'ether') || 0).toFixed(2)} $NAPAS
           </Typography>
         </UnStake>
         <Stake>
           <TitleStake fontSize={30} color="#B4C4FB" strong lineHeight="33px">
-            $Berries Balance
+            $NAPAS Balance
             <Button onClick={() => toggleOpen('stakeModal')} disabled={+allowance === 0 || Number(balance) === 0}>
               Stake
             </Button>{' '}
@@ -326,15 +324,15 @@ export const StakeBerries: FC = () => {
             </Button>
           </TitleStake>
           <Typography fontSize={35} strong margin="10px 0 0" lineHeight="40px">
-            {Number(balance).toFixed(2)} $BERRIES
+            {Number(balance).toFixed(2)} $NAPAS
           </Typography>
         </Stake>
       </StakeBerriesContainer>
       {open.stakeModal && (
-        <StakeLPModal handleStake={handleStake} onClose={() => toggleOpen('stakeModal')} name="$BERRIES" />
+        <StakeLPModal handleStake={handleStake} onClose={() => toggleOpen('stakeModal')} name="$NAPAS" />
       )}
       {open.unStakeModal && (
-        <UnStakeLPModal handleUnstake={handleUnstake} onClose={() => toggleOpen('unStakeModal')} name="$BERRIES" />
+        <UnStakeLPModal handleUnstake={handleUnstake} onClose={() => toggleOpen('unStakeModal')} name="$NAPAS" />
       )}
     </>
   );

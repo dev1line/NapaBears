@@ -16,9 +16,9 @@ const InfoSection = () => {
             Heaven or Hell
           </Typography>
           <Typography mt={17} fontSize={24} lineHeight={28}>
-            All throughout October, the Halloween Bears haunted the Metaverse, terrifying anyone and anything they set
-            their eyes on. In the ensuing chaos, an evil coven of Witch Bears have taken over! Luckily, a valiant force
-            of Angel Bears have stepped up to fend them off. Will you be #blessed enough to mint an Angel and save the
+            All throughout October, the NapaBears haunted the Metaverse, terrifying anyone and anything they set their
+            eyes on. In the ensuing chaos, an evil coven of Witch Bears have taken over! Luckily, a valiant force of
+            Angel Bears have stepped up to fend them off. Will you be #blessed enough to mint an Angel and save the
             Metaverse?!
           </Typography>
         </div>
@@ -32,7 +32,7 @@ const InfoSection = () => {
         <ItemWraper>
           <img src={Badge} alt="schedule" />
           <Typography fontSize={24} lineHeight={28}>
-            Entry Price: 50 $BERRIES per roll/mint (one roll per Halloween Bear you own)
+            Entry Price: 50 $NAPAS per roll/mint (one roll per Napa Bear you own)
           </Typography>
         </ItemWraper>
         <ItemWraper>

@@ -59,7 +59,7 @@ export default function HeaderComponent({ executeScroll }: HeaderProps) {
         <CenterContainer ref={myRefCenter}>
           <ThisYearImg src={ThisYear} loading="lazy" sizes="100vw" alt="" className="image-13" />
           <ZombieKnifeImg src={Zombieknife} loading="lazy" alt="" className="image-14" />
-          <StakeBearText> STAKE YOUR BEAR TO EARN $BERRIES</StakeBearText>
+          <StakeBearText> STAKE YOUR BEAR TO EARN $NAPAS</StakeBearText>
           {/* <StakeYourBearImg src={StakeYourBear} loading="lazy" alt="" className="image-16" /> */}
           <GDFGImg src={GDFG} loading="lazy" sizes="100vw" alt="" className="image-15" />
         </CenterContainer>
@@ -77,9 +77,9 @@ export default function HeaderComponent({ executeScroll }: HeaderProps) {
             className="image-17"
           /> */}
           <StakeBearTextSmall> 10% OF MINT FUNDS WILL BE USED TO FUND THE DAO</StakeBearTextSmall>
-          <StakeBearTextSmall> STAKE YOUR BEAR TO EARN $BERRIES</StakeBearTextSmall>
-          <StakeBearTextSmall> DAO VAULT IS FRACTIONALIZED & EMISSIONS ARE PAID OUT VIA $BERRIES</StakeBearTextSmall>
-        
+          <StakeBearTextSmall> STAKE YOUR BEAR TO EARN $NAPAS</StakeBearTextSmall>
+          <StakeBearTextSmall> DAO VAULT IS FRACTIONALIZED & EMISSIONS ARE PAID OUT VIA $NAPAS</StakeBearTextSmall>
+
           {/* <StakeBearZImg src={StakeBearZ} loading="lazy" width="337" alt="" /> */}
           {/* <DAOVaultImg src={DAOVault} loading="lazy" width="335" alt="" /> */}
         </StakeContainer>
@@ -132,8 +132,7 @@ export default function HeaderComponent({ executeScroll }: HeaderProps) {
 const Header = styled.header`
   padding: 18px 32px 24px;
   z-index: 5;
-    background-color: #5a189a;
-
+  background-color: #5a189a;
 `;
 
 // const TitleImg = styled.img`
@@ -244,17 +243,17 @@ const CenterContainer = styled.div`
 `;
 
 const StakeBearText = styled.p`
-  font-size:80px;
+  font-size: 80px;
   margin-top: -45px;
   @media (max-width: 768px) {
-    font-size:50px;
+    font-size: 50px;
   }
-`
+`;
 
 const StakeBearTextSmall = styled.p`
-font-size: 50px;
-text-align:left;
-@media (max-width: 768px) {
-  font-size:40px;
-}
-`
+  font-size: 50px;
+  text-align: left;
+  @media (max-width: 768px) {
+    font-size: 40px;
+  }
+`;

@@ -26,9 +26,9 @@ const ClaimSection = ({ balance, tokensOfOwner, availBears, handleRoll }: any) =
           <Row justifyContent="center" alignItems="center">
             <>
               <Col xs={24} lg={13}>
-                <Typography {...TypoProps}>$BERRIES Balance: ${Number(balance).toFixed(2)}</Typography>
+                <Typography {...TypoProps}>$NAPAS Balance: ${Number(balance).toFixed(2)}</Typography>
                 <Typography mt={15} mb={15} {...TypoProps}>
-                  Total Halloween Bears: {tokensOfOwner.length}&nbsp;
+                  Total NapaBears: {tokensOfOwner.length}&nbsp;
                   <TypographySpan {...TypoProps} fontWeight="normal">
                     (Available: {availBears.length}, Rolled: {tokensOfOwner.length - availBears.length})
                   </TypographySpan>

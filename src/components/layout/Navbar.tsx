@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import styled, { css } from 'styled-components';
 
-// import Logo from 'assets/v2/logo.png';
+import Logo from 'assets/v2/Napaglobal.png';
 import { Container } from 'styled-bootstrap-grid';
 import { Link, NavLink } from 'react-router-dom';
 import { AccountInfo } from 'pages/Stake/AccountInfo';
@@ -19,18 +19,19 @@ const Navbar: FC = () => {
       <NavInner>
         <NavMain>
           <Hamburger open={open} onClick={toggleOpen} />
-          <Link to="/">{/* <LogoImage src={Logo} /> */}</Link>
+          <Link to="/">
+            <LogoImage src={Logo} />
+          </Link>
 
           <NavList open={open}>
-            {/* <NavLink to={routesEnum.berries}>$BERRIES</NavLink> */}
-            <NavLink to={routesEnum.stake}>Stake & Earn $BERRIES</NavLink>
+            <NavLink to={routesEnum.stake}>Stake & Earn $NAPAS</NavLink>
             <NavbarDropdown>
               Event
               <NavbarDropdownContent>
                 <NavLink to={routesEnum.heavenAndHell}>Heaven or Hell</NavLink>
               </NavbarDropdownContent>
             </NavbarDropdown>
-            <a href="/">DAO Vote</a>
+            <a href="/">DAO</a>
           </NavList>
         </NavMain>
         <AccountInfo />
@@ -95,14 +96,15 @@ const Hamburger = styled.div<{ open: boolean }>`
     `}
 `;
 
-// const LogoImage = styled.img`
-//   width: 60px;
-//   height: 60px;
-//   margin-right: 52px;
-//   @media (max-width: 768px) {
-//     margin-right: 0px;
-//   }
-// `;
+const LogoImage = styled.img`
+  width: 60px;
+  height: 60px;
+  margin-right: 52px;
+  border-radius: 50%;
+  @media (max-width: 768px) {
+    margin-right: 0px;
+  }
+`;
 
 const NavMain = styled.div`
   display: flex;

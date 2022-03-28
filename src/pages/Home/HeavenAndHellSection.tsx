@@ -34,10 +34,10 @@ const HeavenAndHellSection = () => {
                 November 11th - 15th, 2021
               </Typography>
               <Typography align="justify" mb={19}>
-                All throughout October the Halloween Bears haunted the metaverse, terrifying anyone and anything they
-                set their eyes on. In the ensuing chaos, an evil coven of Witches has taken over! Luckily, a valiant
-                force of Angels have stepped up to fend them off. Will you be #blessed enough to mint an Angel and save
-                the Metaverse?!
+                All throughout October the NapaBears haunted the metaverse, terrifying anyone and anything they set
+                their eyes on. In the ensuing chaos, an evil coven of Witches has taken over! Luckily, a valiant force
+                of Angels have stepped up to fend them off. Will you be #blessed enough to mint an Angel and save the
+                Metaverse?!
               </Typography>
             </TextContainer>
           </Col>

@@ -44,7 +44,7 @@ const DevolopmentSection = () => {
   return (
     <FooterContainer>
       <Container>
-        <div>
+        {/* <div>
           <Typography mt={24} align="center" fontSize={48} lineHeight={56} fontWeight="bold">
             Christmas Bears
           </Typography>
@@ -52,7 +52,7 @@ const DevolopmentSection = () => {
             Release date: TBD
           </Typography>
           <Typography align="center">Coming Soon!</Typography>
-        </div>
+        </div> */}
 
         <div>
           <Typography mt={242} align="center" fontSize={48} lineHeight={56} fontWeight="bold">
@@ -67,7 +67,7 @@ const DevolopmentSection = () => {
               toggleOpen={() => toggleOpen(0)}
             >
               <Typography>
-                The DAO purchased 40 Bears Deluxe, which were fractionalized to create the $BERRIES token.
+                The DAO purchased 40 Bears Deluxe, which were fractionalized to create the $NAPAS token.
               </Typography>
               <BearImageContainer>
                 <BearImageWrapper>
@@ -157,8 +157,7 @@ const DevolopmentSection = () => {
               toggleOpen={() => toggleOpen(3)}
             >
               <Typography align="justify">
-                The $BERRIES staking contract and website UI were deployed on 11-1-2021. Stake your bears to earn
-                $BERRIES!
+                The $NAPAS staking contract and website UI were deployed on 11-1-2021. Stake your bears to earn $NAPAS!
               </Typography>
             </Collapse>
 
@@ -185,7 +184,7 @@ const DevolopmentSection = () => {
               toggleOpen={() => toggleOpen(5)}
             >
               <Typography align="justify">
-                We're constantly thinking of new and innovative ways to utilize $BERRIES. From minting future NFT
+                We're constantly thinking of new and innovative ways to utilize $NAPAS. From minting future NFT
                 collections to entering raffles and community games, the sky is the limit. Utilities can be proposed and
                 voted on by the DAO.
               </Typography>

@@ -20,7 +20,7 @@ export const WalletConnect: FC = () => {
     <DropDownContainer>
       {active ? (
         <ConnectButton>
-          <a href={'https://opensea.io/'} target="blank">
+          <a href={'https://testnets.opensea.io/collection/allnapabears'} target="blank">
             Buy on OpenSea
           </a>
         </ConnectButton>

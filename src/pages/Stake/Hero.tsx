@@ -323,12 +323,12 @@ const Hero = () => {
             STAKE YOUR <span>BEARS</span>
           </LargeText>
           <LargeText fontSize={48}>
-            TO EARN <span>$BERRIES</span>
+            TO EARN <span>$NAPAS</span>
           </LargeText>
           <Typography fontSize={18}>
-            $BERRIES our your ticket to the MetaBears ecosystem. Use them to mint future NFT collections, enter raffles,
-            participate in community games, join future whitelists, and much more. Stake your Halloween Bears to start
-            earning today!"
+            $NAPAS our your ticket to the Napa World ecosystem. Use them to mint future NFT collections, enter raffles,
+            participate in community games, join future whitelists, and much more. Stake your NapaBears to start earning
+            today!"
           </Typography>
           <WalletConnect />
         </Introduction>
@@ -344,7 +344,7 @@ const Hero = () => {
             </Title>
             <Typography fontSize={18} color="#000">
               Due to recent changes, we've migrated from the $SWEETS contract. Please unstake your bears and migrate to
-              the new $BERRIES contract.
+              the new $NAPAS contract.
             </Typography>
             <Typography fontSize={18} color="#000" strong margin="10px 0 0 0">
               You have {stakedBearOld.length} bears available to unstake
@@ -358,10 +358,10 @@ const Hero = () => {
 
       <TotalStakeContainer>
         <TotalStakeRow>
-          <PercentageStakeText fontSize={36} color="#e31d78" strong>
+          <PercentageStakeText fontSize={36} color="#098d60" strong>
             {(allStakedBear / totalCount) * 100 || 0}% Total Staked Bears
           </PercentageStakeText>
-          <CountStake fontSize={36} color="#e31d78" strong>
+          <CountStake fontSize={36} color="#098d60" strong>
             {allStakedBear}/{totalCount}
           </CountStake>
         </TotalStakeRow>

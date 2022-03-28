@@ -219,9 +219,9 @@ export const StakeLP: FC = () => {
       )}
       <TitleContainer>
         <StakeBerriesText fontSize={48} strong lineHeight="50px">
-          Stake $BERRIES-ETH
+          Stake $NAPAS-ETH
         </StakeBerriesText>
-        <Typography fontSize={18}>Stake LP tokens and earn more $BERRIES (Total Pool = 15,000 $BERRIES/day)</Typography>
+        <Typography fontSize={18}>Stake LP tokens and earn more $NAPAS (Total Pool = 15,000 $NAPAS/day)</Typography>
         {+allowance === 0 && <Button onClick={handleApprove}>Approve LP Staking</Button>}
       </TitleContainer>
       <StakeLPContainer>
@@ -242,7 +242,7 @@ export const StakeLP: FC = () => {
             </Button>
           </TitleClaimRewards>
           <ClaimRewardAmount strong fontSize={36} lineHeight="40px">
-            {Number(library?.utils?.fromWei('' + totalRewards, 'ether') || 0).toFixed(2)} $BERRIES
+            {Number(library?.utils?.fromWei('' + totalRewards, 'ether') || 0).toFixed(2)} $NAPAS
           </ClaimRewardAmount>
         </ClaimRewards>
         <UnstakeBear>

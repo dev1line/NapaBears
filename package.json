@@ -33,7 +33,7 @@
     "web3": "^1.6.0"
   },
   "scripts": {
-    "dev": "react-scripts start",
+    "dev": "react-scripts start --watch",
     "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
