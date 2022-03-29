@@ -377,6 +377,7 @@ const BearImg = styled.div`
   cursor: pointer;
   img {
     width: 85px;
+    height: 85px;
     border-radius: 10px;
   }
   &.selected {
