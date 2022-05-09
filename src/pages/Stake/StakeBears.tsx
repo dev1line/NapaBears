@@ -4,7 +4,29 @@ import { Typography } from './Typography';
 import { useWallet } from 'hooks/useWallet';
 import { getContractBear } from 'utils/getContract';
 import axios from 'axios';
+import axiosRetry from 'axios-retry';
 
+const handleRetry = async (removeIPFSTextImg: string) => {
+  axiosRetry(axios, { retries: 3 });
+
+  const result = await axios
+    .get(`https://ipfs.io/ipfs/${removeIPFSTextImg}`) // The first request fails and the second returns 'ok'
+    .then((result) => {
+      return result?.data?.image; // 'ok'
+    });
+
+  // Exponential back-off retry delay between requests
+  axiosRetry(axios, { retryDelay: axiosRetry.exponentialDelay });
+
+  // Custom retry delay
+  axiosRetry(axios, {
+    retryDelay: (retryCount) => {
+      return retryCount * 1000;
+    },
+  });
+
+  return result;
+};
 export const StakeBears = ({
   balance,
   tokensOfOwner,
@@ -39,11 +61,12 @@ export const StakeBears = ({
               stakedBear.map(async (item: any): Promise<any> => {
                 const img = await bearContract.methods.tokenURI(item).call();
                 const removeIPFSTextImg = img.substring(7, img.length);
-                const imgUrl = await axios.get(`https://gateway.pinata.cloud/ipfs/${removeIPFSTextImg}`);
-                const img2nd = imgUrl?.data?.image;
+                // const imgUrl = await axios.get(`https://ipfs.io/ipfs/${removeIPFSTextImg}`);
+                const imgUrl = await handleRetry(removeIPFSTextImg);
+                const img2nd: string = imgUrl; //imgUrl?.data?.image;
                 const removeIPFSTextImg2nd = img2nd.substring(7, img2nd.length);
                 return {
-                  img: `https://gateway.pinata.cloud/ipfs/${removeIPFSTextImg2nd}`,
+                  img: `https://ipfs.io/ipfs/${removeIPFSTextImg2nd}`,
                   id: item,
                 };
               })
@@ -55,11 +78,12 @@ export const StakeBears = ({
               tokensOfOwner.map(async (item: any): Promise<any> => {
                 const img = await bearContract.methods.tokenURI(item).call();
                 const removeIPFSTextImg = img.substring(7, img.length);
-                const imgUrl = await axios.get(`https://gateway.pinata.cloud/ipfs/${removeIPFSTextImg}`);
-                const img2nd = imgUrl?.data?.image;
+                // const imgUrl = await axios.get(`https://ipfs.io/ipfs/${removeIPFSTextImg}`);
+                const imgUrl = await handleRetry(removeIPFSTextImg);
+                const img2nd = imgUrl; //?.data?.image;
                 const removeIPFSTextImg2nd = img2nd.substring(7, img2nd.length);
                 return {
-                  img: `https://gateway.pinata.cloud/ipfs/${removeIPFSTextImg2nd}`,
+                  img: `https://ipfs.io/ipfs/${removeIPFSTextImg2nd}`,
                   id: item,
                 };
               })

@@ -4,7 +4,7 @@ import { Typography } from 'pages/Stake/Typography';
 import { FC, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { getContractBear } from 'utils/getContract';
-
+import axiosRetry from 'axios-retry';
 interface RollModalProps {
   onClose: () => void;
   handleRoll: (value: any) => void;
@@ -24,7 +24,27 @@ const BearSelectModal: FC<RollModalProps> = ({ onClose, handleRoll, name, bears 
   };
   const [bearsList, setBearsList] = useState([] as any);
   const { active, connector, account, library } = useWallet();
+  const handleRetry = async (removeIPFSTextImg: string) => {
+    axiosRetry(axios, { retries: 3 });
 
+    const result = await axios
+      .get(`https://ipfs.io/ipfs/${removeIPFSTextImg}`) // The first request fails and the second returns 'ok'
+      .then((result) => {
+        return result?.data?.image; // 'ok'
+      });
+
+    // Exponential back-off retry delay between requests
+    axiosRetry(axios, { retryDelay: axiosRetry.exponentialDelay });
+
+    // Custom retry delay
+    axiosRetry(axios, {
+      retryDelay: (retryCount) => {
+        return retryCount * 1000;
+      },
+    });
+
+    return result;
+  };
   useEffect(() => {
     const getBlockchainData = async () => {
       if (connector && library) {
@@ -36,15 +56,15 @@ const BearSelectModal: FC<RollModalProps> = ({ onClose, handleRoll, name, bears 
               bears.map(async (item: any): Promise<any> => {
                 const img = await bearContract.methods.tokenURI(item).call();
                 const removeIPFSTextImg = img.substring(7, img.length);
-                console.log('removeIPFSTextImg', removeIPFSTextImg);
-                const imgUrl = await axios.get(`https://gateway.pinata.cloud/ipfs/${removeIPFSTextImg}`);
 
-                const img2nd = imgUrl?.data?.image;
+                const imgUrl = await handleRetry(removeIPFSTextImg); //axios.get(`https://ipfs.io/ipfs/${removeIPFSTextImg}`);
+
+                const img2nd = imgUrl; //?.data?.image;
 
                 const removeIPFSTextImg2nd = img2nd.substring(7, img2nd.length);
                 console.log('removeIPFSTextImg2nd', removeIPFSTextImg2nd);
                 return {
-                  img: `https://gateway.pinata.cloud/ipfs/${removeIPFSTextImg2nd}`,
+                  img: `https://ipfs.io/ipfs/${removeIPFSTextImg2nd}`,
                   id: item,
                 };
               })
